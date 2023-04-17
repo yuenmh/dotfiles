@@ -32,12 +32,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Disable auto sleep
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+
 # Rebind caps lock to escape
 exec_always --no-startup-id setxkbmap -option caps:escape
 
 # Set wallpaper
 set $dotfiles /home/evan/dotfiles
-exec_always --no-startup-id nitrogen --set-auto $dotfiles/wallpaper/current
+exec_always --no-startup-id nitrogen --set-zoom-fill $dotfiles/wallpaper/current
 
 # Start compositor
 exec --no-startup-id picom -b
