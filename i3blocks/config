@@ -1,0 +1,4 @@
+[block1]
+command=echo "Hello World"
+color=#FFFFFF
+interval=30
