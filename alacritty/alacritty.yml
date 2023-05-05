@@ -195,15 +195,44 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-
-# Colors (Tomorrow Night)
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    # From https://github.com/folke/tokyonight.nvim/blob/1b0c88094548a62641ece1e668fa9a234e1c539e/lua/tokyonight/colors.lua#L8
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
+
+  # Normal colors
+  normal:
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+
+  # Default colors
+  #primary:
     #background: '#1f2335' 
-    background: '#1a1b26'
-    foreground: '#c5c8c6'
+    #background: '#1a1b26'
+    #foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #
