@@ -1,4 +1,9 @@
-[block1]
-command=echo "Hello World"
-color=#FFFFFF
-interval=30
+[battery]
+command=i3widgets battery --device-path /org/freedesktop/UPower/devices/battery_BAT0
+interval=5
+markup=pango
+
+[time]
+command=i3widgets time-zh
+interval=5
+markup=pango
