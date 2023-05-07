@@ -49,7 +49,7 @@ set $dotfiles /home/evan/dotfiles
 exec_always --no-startup-id nitrogen --set-zoom-fill $dotfiles/wallpaper/current
 
 # Start compositor
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b --inactive-dim 0.25
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
