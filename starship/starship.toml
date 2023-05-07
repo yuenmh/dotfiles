@@ -1,0 +1,58 @@
+#:schema https://starship.rs/config-schema.json
+
+format = """
+\\($username\\) $directory $fill\
+( \\($git_branch $git_status\\))\
+( $git_state)\
+( \\($rust\\))\
+( \\($conda\\))\
+( \\($python\\))\
+( \\($memory_usage\\))\
+$line_break\
+$character\
+"""
+
+add_newline = false
+
+[username]
+show_always = true
+format = '[$user]($style)'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)'
+truncate_to_repo = false
+truncation_symbol = "..."
+truncation_length = 3
+
+[fill]
+symbol = " "
+
+[git_branch]
+format = "[$symbol $branch(:$remote_branch)]($style)"
+symbol = ""
+
+[git_status]
+up_to_date = "✔"
+format = "[$all_status$ahead_behind]($style)"
+style = "purple bold"
+
+[git_state]
+format = "\\([$state( $progress_current/$progress_total)]($style)\\)"
+
+[rust]
+format = "[$symbol($version)( $toolchain)]($style)"
+
+[conda]
+format = "[$symbol $environment]($style)"
+
+[python]
+format = "[${symbol}${pyenv_prefix}(${version})( \\($virtualenv\\))]($style)"
+
+[memory_usage]
+disabled = false
+threshold = 0
+format = "[$ram]($style)"
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
