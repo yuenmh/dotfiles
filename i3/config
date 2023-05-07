@@ -217,18 +217,36 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Colors
+# taken from https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/colors.lua
+set $c_0bg               #24283b
+set $c_0bg_dark          #1f2335
+set $c_0bg_highlight     #292e42
+set $c_fg                #c0caf5
+set $c_blue              #7aa2f7
+set $c_blue0             #3d59a1
+set $c_bg                #1a1b26
+set $c_bg_dark           #16161e
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
+    status_command i3blocks
+    colors {
+        background #1a1b26
+        statusline #ffffff
+
+        #                  border  backgr. text
+        focused_workspace  $c_blue0 $c_blue0 $c_fg
+        inactive_workspace $c_0bg_highlight $c_0bg_highlight $c_fg
+    }
 }
+
+gaps inner 6
 
 # Colors
 # class                 border  backgr. text    indicator child_border
 # class                 border  backgr. text    indicator child_border
-client.focused          #465d8c #394b70 #ffffff #2e9ef4   #285577
-#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-#client.background       #ffffff
+client.focused          $c_blue0 $c_blue0 $c_fg $c_blue $c_blue0
+client.focused_inactive $c_0bg_highlight $c_0bg_highlight $c_fg $c_bg $c_0bg_highlight
+client.unfocused $c_0bg_highlight $c_0bg_highlight $c_fg $c_bg $c_0bg_highlight
