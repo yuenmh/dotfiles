@@ -1,0 +1,9 @@
+[memory]
+command=i3widgets memory
+interval=10
+markup=pango
+
+[time]
+command=i3widgets time-zh
+interval=5
+markup=pango
