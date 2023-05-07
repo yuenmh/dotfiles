@@ -1,57 +1,48 @@
 #:schema https://starship.rs/config-schema.json
 
 format = """
-\\($username\\) $directory $fill\
-( \\($git_branch $git_status\\))\
-( $git_state)\
-( \\($rust\\))\
-( \\($conda\\))\
-( \\($python\\))\
-( \\($memory_usage\\))\
+$username($git_branch$git_status)$directory\
+$fill\
+($rust)\
+($conda)\
+($python)\
 $line_break\
-$character\
+$character
 """
 
 add_newline = false
 
 [username]
 show_always = true
-format = '[$user]($style)'
+format = '[ $user ](fg:#212736 bg:#769ff0)'
+
+[git_branch]
+format = "[ $symbol $branch(:$remote_branch)](fg:#769ff0 bg:#394260)"
+symbol = ""
+
+[git_status]
+up_to_date = "✔"
+format = "[$all_status$ahead_behind ](fg:#769ff0 bg:#394260)"
+style = "purple bold"
 
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bg:#212736'
+format = '[ $path ]($style)[$read_only]($read_only_style)'
 truncate_to_repo = false
-truncation_symbol = "..."
+truncation_symbol = '…/'
 truncation_length = 3
 
 [fill]
 symbol = " "
 
-[git_branch]
-format = "[$symbol $branch(:$remote_branch)]($style)"
-symbol = ""
-
-[git_status]
-up_to_date = "✔"
-format = "[$all_status$ahead_behind]($style)"
-style = "purple bold"
-
-[git_state]
-format = "\\([$state( $progress_current/$progress_total)]($style)\\)"
-
 [rust]
-format = "[$symbol($version)( $toolchain)]($style)"
+format = "[ $symbol($version)( $toolchain) ]($style bg:#212736)"
 
 [conda]
-format = "[$symbol $environment]($style)"
+format = "[ $symbol $environment ]($style bg:#212736)"
 
 [python]
-format = "[${symbol}${pyenv_prefix}(${version})( \\($virtualenv\\))]($style)"
-
-[memory_usage]
-disabled = false
-threshold = 0
-format = "[$ram]($style)"
+format = "[ ${symbol}${pyenv_prefix}(${version})( \\($virtualenv\\)) ]($style bg:#212736)"
 
 [character]
 success_symbol = "[➜](bold green)"
