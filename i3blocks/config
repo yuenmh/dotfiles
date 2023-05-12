@@ -1,3 +1,9 @@
+[brightness]
+command=i3widgets brightness
+interval=once
+signal=10
+markup=pango
+
 [sink-volume]
 command=i3widgets sink-volume
 interval=once
