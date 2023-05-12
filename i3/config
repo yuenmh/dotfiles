@@ -45,8 +45,7 @@ exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinp
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Click Method Enabled" 0, 1
 
 # Set wallpaper
-set $dotfiles /home/evan/dotfiles
-exec_always --no-startup-id nitrogen --set-zoom-fill $dotfiles/wallpaper/current
+exec_always --no-startup-id nitrogen --set-zoom-fill ~/.local/share/current-wallpaper
 
 # Start compositor
 exec --no-startup-id picom -b --inactive-dim 0.25
