@@ -1,3 +1,3 @@
-function conda-activate
-    eval /home/evan/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+function conda_activate
+    eval $CONDA_PATH "shell.fish" "hook" $argv | source
 end
