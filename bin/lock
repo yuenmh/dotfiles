@@ -1,0 +1,11 @@
+#!/bin/bash
+
+image_path=/tmp/lockscreen.png
+
+function save-screenshot {
+    import -window root -resize 10% bmp:- \
+    | convert bmp:- -blur 0x2.5 -filter Spline -resize 1920x1080 $image_path
+}
+
+save-screenshot
+i3lock --image $image_path
