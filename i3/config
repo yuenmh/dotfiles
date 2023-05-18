@@ -112,8 +112,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# toggle split direction because I never remember which one is which anyways
-bindsym $mod+v layout toggle split
+# only h split because I never remember which one is which anyways
+# I can just $mod+e to get the other direction
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
