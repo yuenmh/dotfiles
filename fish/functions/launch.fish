@@ -7,9 +7,16 @@ function list_all_bins
 end
 
 function launch
+    set -l flag '/tmp/_launcher_opened'
+    if test -e $flag
+        return
+    end
+    touch $flag
+
     set -l bin_name (list_all_bins | fzf)
     if test -n "$bin_name"
-        set -l bin_path (which $bin_name)
-        $bin_path &> /dev/null &
+        i3-msg -t command exec $bin_name
     end
+
+    rm $flag
 end
