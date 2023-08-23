@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Start Input Method (imstart)
+Exec=bash -c imstart
+Type=Application
