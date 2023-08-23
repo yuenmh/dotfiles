@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Stop Input Method (imstop)
+Exec=bash -c imstop
+Type=Application

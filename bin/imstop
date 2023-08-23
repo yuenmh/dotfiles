@@ -1,3 +1,4 @@
 #!/bin/sh
 
 fcitx-remote -e
+notify-send "输入法" "输入法已关闭"
