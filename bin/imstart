@@ -1,4 +1,4 @@
 #!/bin/sh
 
 fcitx -d -r
-notify-send "输入法" "输入法已启动"
+notify-send --hint int:transient:1 "输入法" "输入法已启动"
