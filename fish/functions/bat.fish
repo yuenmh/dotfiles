@@ -1,4 +1,4 @@
-function cat
+function bat
     if type -q batcat
         batcat $argv
     else if type -q bat
