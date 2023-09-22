@@ -8,8 +8,11 @@ let mapleader = " "
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=10
 
-" Do incremental searching.
-set incsearch
+
+set ideajoin " Smart line joining.
+set incsearch " Do incremental searching.
+set number relativenumber
+set idearefactormode=keep " Stay in normal mode when renaming
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
