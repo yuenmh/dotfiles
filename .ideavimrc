@@ -18,6 +18,7 @@ nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(Refactorings.QuickListPopupAction)
 nmap gl <Action>(ShowErrorDescription)
 nmap gh <Action>(QuickJavaDoc)
+imap <C-j> <Action>(copilot.applyInlays)
 
 command Reload :source ~/.ideavimrc <CR>
 
