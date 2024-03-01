@@ -19,16 +19,23 @@ map Q gq
 
 nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>cr <Action>(Refactorings.QuickListPopupAction)
-nmap <leader>1 :b 1<CR>
-nmap <leader>2 :b 2<CR>
-nmap <leader>3 :b 3<CR>
-nmap <leader>4 :b 4<CR>
-nmap <leader>5 :b 5<CR>
+nmap <leader>cn <Action>(Refactorings.QuickListPopupAction)
+
+" Tab switching (Harpoon emulation)
+nmap <leader>1 <Action>(GoToTab1)
+nmap <leader>2 <Action>(GoToTab2)
+nmap <leader>3 <Action>(GoToTab3)
+nmap <leader>4 <Action>(GoToTab4)
+nmap <leader>5 <Action>(GoToTab5)
+
 nmap gl <Action>(ShowErrorDescription)
 nmap gh <Action>(QuickJavaDoc)
 imap <C-j> <Action>(copilot.applyInlays)
 
 command Reload :source ~/.ideavimrc <CR>
+
+" Allow :w typo
+command W :w
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
