@@ -1,9 +1,9 @@
-function bat
-    if type -q batcat
-        batcat $argv
-    else if type -q bat
-        bat $argv
+function bat --wraps bat
+    if type batcat > /dev/null
+        batcat
+    else if type bat > /dev/null
+        bat
     else
-        cat $argv
+        cat
     end
 end
