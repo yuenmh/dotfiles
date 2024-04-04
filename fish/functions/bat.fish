@@ -1,9 +1,9 @@
 function bat --wraps bat
     if type batcat > /dev/null
-        batcat
+        batcat $argv
     else if type bat > /dev/null
-        bat
+        bat $argv
     else
-        cat
+        cat $argv
     end
 end
