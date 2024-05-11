@@ -25,11 +25,13 @@ return {
 		button_bg = themes[titlebar_theme].background,
 		button_hover_bg = themes[titlebar_theme].selection_bg,
 
-		border_left_width = "0.75cell",
-		border_right_width = "0.75cell",
-		border_bottom_height = "0.25cell",
+		border_left_width = "0.5cell",
+		border_right_width = "0.5cell",
+		border_top_height = "0.2cell",
+		border_bottom_height = "0.2cell",
 		border_left_color = themes[titlebar_theme].background,
 		border_right_color = themes[titlebar_theme].background,
+		border_top_color = themes[titlebar_theme].background,
 		border_bottom_color = themes[titlebar_theme].background,
 	},
 
