@@ -1,12 +1,17 @@
 local wezterm = require("wezterm")
 
 return {
+	-- TODO: Make not hardcoded
+	default_prog = { "distrobox", "enter", "ubuntu", "-e", "fish" },
+
 	font = wezterm.font("Iosevka", { weight = "DemiBold" }),
 	font_size = 10.5,
 	color_scheme = "Tokyo Night",
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
 	tab_max_width = 100,
+	initial_rows = 36,
+	initial_cols = 144,
 
 	leader = { key = "a", mods = "CTRL" },
 	keys = {
