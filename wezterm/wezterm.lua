@@ -4,7 +4,7 @@ return {
 	-- TODO: Make not hardcoded
 	default_prog = { "distrobox", "enter", "ubuntu", "-e", "fish" },
 
-	font = wezterm.font("Iosevka", { weight = "DemiBold" }),
+	font = wezterm.font("IosevkaTerm Nerd Font", { weight = "DemiBold" }),
 	font_size = 10.5,
 	color_scheme = "Tokyo Night",
 	use_fancy_tab_bar = false,
