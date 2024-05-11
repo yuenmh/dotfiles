@@ -1,12 +1,39 @@
 local wezterm = require("wezterm")
 
+local font = wezterm.font_with_fallback({
+	{ family = "IosevkaTerm Nerd Font", weight = "DemiBold" },
+})
+
+local titlebar_theme = "Tokyo Night Moon"
+local theme = "Tokyo Night"
+
+local themes = wezterm.color.get_builtin_schemes()
+
 return {
 	-- TODO: Make not hardcoded
 	default_prog = { "distrobox", "enter", "ubuntu", "-e", "fish" },
 
-	font = wezterm.font("IosevkaTerm Nerd Font", { weight = "DemiBold" }),
+	font = font,
 	font_size = 10.5,
-	color_scheme = "Tokyo Night",
+	window_frame = {
+		font = font,
+		font_size = 10,
+		active_titlebar_bg = themes[titlebar_theme].background,
+		inactive_titlebar_bg = themes[titlebar_theme].background,
+		active_titlebar_border_bottom = themes[titlebar_theme].background,
+		inactive_titlebar_border_bottom = themes[titlebar_theme].background,
+		button_bg = themes[titlebar_theme].background,
+		button_hover_bg = themes[titlebar_theme].selection_bg,
+
+		border_left_width = "0.75cell",
+		border_right_width = "0.75cell",
+		border_bottom_height = "0.25cell",
+		border_left_color = themes[titlebar_theme].background,
+		border_right_color = themes[titlebar_theme].background,
+		border_bottom_color = themes[titlebar_theme].background,
+	},
+
+	color_scheme = theme,
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
 	tab_max_width = 100,
