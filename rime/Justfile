@@ -1,0 +1,24 @@
+rime-dir := canonicalize(config_directory() + "/ibus/rime")
+
+default:
+	just --choose
+
+install:
+	#!/usr/bin/env fish
+	pushd {{rime-dir}}
+	if not git status &> /dev/null
+		echo "Cloning oh-my-rime..."
+		git clone https://github.com/Mintimate/oh-my-rime.git
+		cp -r oh-my-rime/. {{rime-dir}}
+		rm -rf oh-my-rime
+		echo "Cloned repository"
+	else
+		echo "Already cloned oh-my-rime."
+	end
+	popd
+
+update:
+	#!/usr/bin/env fish
+	pushd {{rime-dir}}
+	git pull
+	popd
