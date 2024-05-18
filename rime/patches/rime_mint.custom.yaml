@@ -1,0 +1,5 @@
+patch:
+  schema:
+    name: 拼音-薄荷拼音(全拼)
+  menu:
+    page_size: 10

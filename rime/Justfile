@@ -22,3 +22,26 @@ update:
 	pushd {{rime-dir}}
 	git pull
 	popd
+
+link:
+	#!/usr/bin/env fish
+	set -l filenames (find {{justfile_directory()}}/patches -type f -name '*.custom.yaml')
+	for src in $filenames
+		set_color -b cyan; set_color black; echo -n " Linking "; set_color normal
+		set -l filename (basename $src)
+		set -l dst "{{rime-dir}}/$filename"
+		echo " $src -> $dst"
+		ln -sf $src $dst
+	end
+	set_color -b green; set_color black; echo " Done "; set_color normal
+
+clean:
+	#!/usr/bin/env fish
+	for link in {{rime-dir}}/*.custom.yaml
+		if readlink $link > /dev/null
+			set_color -b red; set_color black; echo -n " Remove "; set_color normal
+			echo " $link"
+			unlink $link
+		end
+	end
+	set_color -b green; set_color black; echo " Done "; set_color normal
