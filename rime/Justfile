@@ -1,4 +1,5 @@
 rime-dir := canonicalize(config_directory() + "/ibus/rime")
+cantonese-dir := data_directory() + "/rime-cantonese"
 
 default:
 	just --choose
@@ -17,9 +18,24 @@ install:
 	end
 	popd
 
+	mkdir -p {{cantonese-dir}}
+	pushd {{cantonese-dir}}
+	if not git status &> /dev/null
+		echo "Cloning rime-cantonese..."
+		git clone https://github.com/rime/rime-cantonese.git .
+		echo "Cloned repository"
+	else
+		echo "Already cloned rime-cantonese."
+	end
+	popd
+
 update:
 	#!/usr/bin/env fish
 	pushd {{rime-dir}}
+	git pull
+	popd
+
+	pushd {{cantonese-dir}}
 	git pull
 	popd
 
@@ -33,6 +49,16 @@ link:
 		echo " $src -> $dst"
 		ln -sf $src $dst
 	end
+	pushd {{cantonese-dir}}
+	set -l filenames jyut6ping3*.yaml essay-cantonese.txt symbols_cantonese.yaml opencc/*
+	for f in $filenames
+		set_color -b cyan; set_color black; echo -n " Linking "; set_color normal
+		set -l src (realpath $f)
+		set -l dst "{{rime-dir}}/$f"
+		echo " $src -> $dst"
+		ln -sf $src $dst
+	end
+	popd
 	set_color -b green; set_color black; echo " Done "; set_color normal
 
 clean:
