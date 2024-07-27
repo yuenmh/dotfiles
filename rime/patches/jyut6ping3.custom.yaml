@@ -14,6 +14,8 @@ patch:
       - derive/^(g|k)wo/$1o/
       - derive/^(g|k)w(.+)/$1u$2/
 
+      - derive/au/ao/ # 容錯 au -> ao
+
       # 取消下行註釋，支援獨立鼻音韻 ng 併入 m，如「吳」讀若「唔」
       #- derive/^ng([123456])$/m$1/
 
