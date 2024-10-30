@@ -45,7 +45,7 @@
       "space s f": "file_finder::Toggle",
       "space p s": "project_symbols::Toggle",
       "space d s": "outline::Toggle",
-      "space p f": "workspace::ToggleLeftDock"
+      "space p v": "workspace::ToggleLeftDock"
     }
   },
   {
