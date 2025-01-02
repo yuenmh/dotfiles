@@ -11,7 +11,7 @@ local themes = wezterm.color.get_builtin_schemes()
 
 return {
 	-- TODO: Make not hardcoded
-	default_prog = { "distrobox", "enter", "ubuntu", "-e", "fish" },
+	default_prog = { "start-container" },
 
 	font = font,
 	font_size = 10.5,
