@@ -59,5 +59,7 @@ return {
 		{ mods = "LEADER", key = "8", action = wezterm.action.ActivateTab(7) },
 		{ mods = "LEADER", key = "9", action = wezterm.action.ActivateTab(8) },
 		{ mods = "LEADER", key = "0", action = wezterm.action.ActivateTab(9) },
+
+		{ mods = "CTRL", key = "Backspace", action = wezterm.action.SendKey({ key = "w", mods = "CTRL" }) },
 	},
 }
