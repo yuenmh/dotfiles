@@ -20,9 +20,14 @@ def main():
 
     script_path = f"/usr/local/bin/{args.name or args.command}"
 
-    print(
-        f"""echo '#!/usr/bin/env bash\n\ndistrobox-host-exec {args.command} "$@"' > {script_path} && chmod +x {script_path}"""
-    )
+    print(f"""
+echo '
+#!/usr/bin/env bash
+distrobox-host-exec {args.command} "$@"
+' |
+sudo tee {script_path} > /dev/null &&
+sudo chmod +x {script_path}
+    """)
 
 
 if __name__ == "__main__":
