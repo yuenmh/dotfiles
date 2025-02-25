@@ -28,5 +28,14 @@
     "light": "One Light",
     "dark": "Tokyo Night"
   },
-  "use_autoclose": false
+  "use_autoclose": false,
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "checkOnSave": {
+          "command": "clippy"
+        }
+      }
+    }
+  }
 }
