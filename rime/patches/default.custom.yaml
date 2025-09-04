@@ -2,4 +2,4 @@ patch:
   schema_list:
     - schema: rime_mint
     - schema: jyut6ping3
-    - schema: double_pinyin_flypy
+    # - schema: double_pinyin_flypy
