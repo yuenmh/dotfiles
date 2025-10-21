@@ -18,6 +18,7 @@ config.default_prog = { 'start-container' }
 
 config.font = font
 config.font_size = font_size
+config.warn_about_missing_glyphs = false
 config.window_frame = {
 	font = font,
 	font_size = 10,
