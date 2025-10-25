@@ -87,6 +87,7 @@ config.keys = {
 	{ mods = 'LEADER', key = '0', action = wezterm.action.ActivateTab(9) },
 
 	{ mods = 'CTRL', key = 'Backspace', action = wezterm.action.SendKey { key = 'w', mods = 'CTRL' } },
+	{ mods = 'CTRL', key = 'Delete', action = wezterm.action.SendKey { key = 'd', mods = 'ALT' } },
 }
 
 return config
