@@ -45,5 +45,5 @@ format = "[ $symbol $environment ]($style bg:#212736)"
 format = "[ ${symbol}${pyenv_prefix}(${version})( \\($virtualenv\\)) ]($style bg:#212736)"
 
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
